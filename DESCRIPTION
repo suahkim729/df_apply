@@ -3,6 +3,8 @@ Title: Package df_apply (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
     person("Suah", "Kim", , "snk23@calvin,edu", role = c("aut", "cre"),
+           "Sherise", "Immanuela", , "sei4@calvin,edu", role = c("aut", "cre"),
+           "Sharon", "Velpula", , "sv44@calvin,edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
