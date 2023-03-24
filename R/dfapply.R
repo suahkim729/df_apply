@@ -8,28 +8,30 @@ TestData <-
           factor = factor(letters[1L:n]),
           logical = rep(c(TRUE, FALSE), length.out = n) )
 
-TestData1 <-
-  tibble( double = rnorm(n, 100, 10))
+#TestData1 <-
+  #tibble( double = rnorm(n, 100, 10))
 
 
-fun <- function(x, digits){
+#fun <- function(x, digits){
   #if (is.numeric(x)) round(x, digits = digits) else x
-  round(x, digits = digits)
-}
+ # round(x, digits = digits)
+#}
 
-filter <- function(x){
+#filter <- function(x){
  # if (is.numeric(x)) {return (TRUE)} else {return (FALSE)}}
-  return (TRUE)
+  #return (TRUE)
+#}
+
+#df_apply <- function(.data, .fun = round, .filter = is.numeric, digits){
+ # if (filter(.data))
+  #  lapply(.data, `fun`, digits = digits) |>
+   # as_tibble()}
+
+
+df_apply <- function(.data, .fun = round, .filter = is.numeric, digits){
 }
 
-df_apply <- function(.data, .fun, .filter, digits){
-  if (filter(.data))
-    lapply(.data, `fun`, digits = digits) |>
-    as_tibble()
-}
 
 
+df_apply(TestData, .fun = round, .filter = is.numeric, digits = 0)
 
-df_apply(TestData1, digits = 0)
-
-filter(TestData1)
