@@ -34,4 +34,7 @@ df_apply <- function(.data, .fun, .filter) {
 
 df_apply(TestData, rfun, rfilter)
 ```
+## More Information
+
+
 ## Team Members: Sharon, Sherise, Suah
