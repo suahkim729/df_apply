@@ -1,11 +1,10 @@
 Package: dfapply
 Title: Package df_apply
 Version: 0.0.0.9000
-Authors@R: 
-    person("Suah", "Kim", , "snk23@calvin,edu", role = c("aut", "cre"),
-            "Sherise", "Immanuela", "sei4@calvin.edu", role = c("aut", "cre"),
-            "Sharon", "Velpula", "sv44@calvin.edu", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: c(
+    person("Suah", "Kim", , "snk23@calvin,edu", role = "cre"),
+    person("Sherise", "Immanuela", "sei4@calvin.edu", role = "aut"),
+    person("Sharon", "Velpula", "sv44@calvin.edu", role = "fnd")))
 Description: This R package allows us to run a loop function
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
