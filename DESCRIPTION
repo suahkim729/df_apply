@@ -5,7 +5,7 @@ Authors@R: c(
     person("Suah", "Kim", , "snk23@calvin,edu", role = "cre"),
     person("Sherise", "Immanuela", "sei4@calvin.edu", role = "aut"),
     person("Sharon", "Velpula", "sv44@calvin.edu", role = "fnd"))
-Description: This R package allows us to run a loop function
+Description: This R package allows us to run a loop function that rounds the numbers
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
