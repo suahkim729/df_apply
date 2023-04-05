@@ -1,5 +1,5 @@
 
-#' Apply a function that can be applied to a columns of a data frame
+#' Apply a function that can be applied to a columns of a data frame (rounding number)
 #'
 #' @param .data should expect a data frame
 #' @param .fun  expect a function that can be applied to a column of a data frame and return a column of a data frame
