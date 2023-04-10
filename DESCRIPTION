@@ -2,7 +2,7 @@ Package: dfapply
 Title: Package df_apply
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Suah", "Kim", , "snk23@calvin,edu", role = "cre"),
+    person("Suah", "Kim", , "snk23@calvin.edu", role = "cre"),
     person("Sherise", "Immanuela", "sei4@calvin.edu", role = "aut"),
     person("Sharon", "Velpula", "sv44@calvin.edu", role = "fnd"))
 Description: This R package allows us to run a loop function that rounds the numbers
