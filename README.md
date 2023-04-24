@@ -19,7 +19,7 @@ You can install the development version of dfapply from
 devtools::install_github("suahkim729/dfapply")
 #> Downloading GitHub repo suahkim729/dfapply@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/tmp/Rtmpubw4WL/remotes3b35d1b4a3f/suahkim729-dfapply-cb16cc4/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmpubw4WL/remotes3b35d1b4a3f/suahkim729-dfapply-cb16cc4/DESCRIPTION’
+#>      checking for file ‘/tmp/Rtmp3yj5j4/remotes81b439599cc/suahkim729-dfapply-d3c2226/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmp3yj5j4/remotes81b439599cc/suahkim729-dfapply-d3c2226/DESCRIPTION’
 #>   ─  preparing ‘dfapply’:
 #>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  excluding invalid files
@@ -28,7 +28,7 @@ devtools::install_github("suahkim729/dfapply")
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #> ─  building ‘dfapply_0.0.0.9000.tar.gz’
-#>      Warning: invalid uid value replaced by that for user 'nobody'
+#>    Warning: invalid uid value replaced by that for user 'nobody'
 #>    Warning: invalid gid value replaced by that for user 'nobody'
 #>    
 #> 
@@ -47,7 +47,7 @@ You can install the package from with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("suahkim729/dfapply")
-#> Skipping install of 'dfapply' from a github remote, the SHA1 (cb16cc49) has not changed since last install.
+#> Skipping install of 'dfapply' from a github remote, the SHA1 (d3c22267) has not changed since last install.
 #>   Use `force = TRUE` to force installation
 ```
 
