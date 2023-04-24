@@ -41,6 +41,7 @@ devtools::install_github("suahkim729/dfapply")
 ```
 
 ## Example
+
 The following shows an example of how you can apply the dfapply function to a data frame.
 
 ```{r}
@@ -62,4 +63,4 @@ df_apply <- function(.data, .fun, .filter) {
 df_apply(TestData, rfun, rfilter)
 ```
 
-### Team Members: Sharon, Sherise, Suah
+#### Team Members: Sharon, Sherise, Suah

@@ -17,8 +17,23 @@ You can install the development version of dfapply from
 ``` r
 # install.packages("devtools")
 devtools::install_github("suahkim729/dfapply")
-#> Skipping install of 'dfapply' from a github remote, the SHA1 (a67cfa85) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo suahkim729/dfapply@HEAD
+#> ── R CMD build ─────────────────────────────────────────────────────────────────
+#>      checking for file ‘/tmp/Rtmpubw4WL/remotes3b35d1b4a3f/suahkim729-dfapply-cb16cc4/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmpubw4WL/remotes3b35d1b4a3f/suahkim729-dfapply-cb16cc4/DESCRIPTION’
+#>   ─  preparing ‘dfapply’:
+#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  excluding invalid files
+#>      Subdirectory 'R' contains invalid file names:
+#>      ‘Tomato.csv’
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#> ─  building ‘dfapply_0.0.0.9000.tar.gz’
+#>      Warning: invalid uid value replaced by that for user 'nobody'
+#>    Warning: invalid gid value replaced by that for user 'nobody'
+#>    
+#> 
+#> Installing package into '/home/snk23/R/x86_64-pc-linux-gnu-library/4.2'
+#> (as 'lib' is unspecified)
 ```
 
 rpackage-dfapply This R Package `dfapply` is to apply df_apply function
@@ -32,7 +47,7 @@ You can install the package from with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("suahkim729/dfapply")
-#> Skipping install of 'dfapply' from a github remote, the SHA1 (a67cfa85) has not changed since last install.
+#> Skipping install of 'dfapply' from a github remote, the SHA1 (cb16cc49) has not changed since last install.
 #>   Use `force = TRUE` to force installation
 ```
 
@@ -65,4 +80,4 @@ df_apply(TestData, rfun, rfilter)
 #> 4  20   3 183
 ```
 
-### Team Members: Sharon, Sherise, Suah
+#### Team Members: Sharon, Sherise, Suah
