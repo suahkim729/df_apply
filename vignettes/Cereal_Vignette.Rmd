@@ -1,0 +1,102 @@
+---
+title: "Cereal_Vignette"
+author: "Sherise Immanuela"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Cereal_Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, setup}
+library(dfapply)
+library(tidyverse)
+library(dplyr)
+```
+
+### Introducing ggplot2
+```{r}
+library(ggplot2)
+```
+
+The ggplot2 package is built on the principles of "The Grammar of Graphics". ggplot2 provides a simple and intuitive method for presenting data by allowing you to specify the variables and aesthetics that you want to use. To use ggplot2, you first start by calling ggplot(), then you specify the dataset you want to use, and finally you add layers to the plot by indicating the specific aesthetic that you want to display. This process makes it easy to create custom visualizations in R.
+
+### Example
+The cereal dataset contains nutrition information for 77 breakfast cereals and includes 16 variables, such as `name` (name of cereal), `mfr` (manufacturer), `calories` (calories per serving), `sugar` (grams of sugars), etc. 
+
+```{r}
+library(readr)
+cereal <- read_delim("cereal.csv", 
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+glimpse(cereal)
+```
+
+### Creating a barplot
+This vignette will focus on showing the features in the geom_bar function in ggplot2. 
+
+A bar plot is a type of chart that represents categorical data with rectangular bars, where the length of each bar is proportional to the value it represents. A bar plot is useful when you want to compare the values of different categories or groups.
+
+Here, we are creating a basic bar plot showing sugar levels of all the cereal brands in the dataset.
+
+```{r}
+cereal |>
+  ggplot(mapping = aes(x = name , y = as.numeric(sugars))) +
+  geom_bar( stat = "identity", alpha = .8)
+```
+
+As you can see, there are way too many cereal brands and the names overlap with each other.
+In the next code chunk, we'll make the same plot but after filtering the dataset to include just some of the most popular cereal brands.
+```{r}
+cereal |>
+  filter(name %in% c("Cheerios", "Cinnamon Toast Crunch","Corn Flakes", "Lucky Charms", "Rice
+                     Krispies","Froot Loops", "Special K", "Wheat Chex")) |>
+  ggplot(mapping = aes(x = name , y = as.numeric(sugars))) +
+  geom_bar( stat = "identity", alpha = .8)
+```
+
+In the next code chunk, we'll create better labels and a title for the plot.
+  
+```{r}
+cereal |>
+  filter(name %in% c("Cheerios", "Cinnamon Toast Crunch","Corn Flakes", "Lucky Charms", "Rice Krispies","Froot Loops", "Special K", "Wheat Chex")) |>
+  ggplot(mapping = aes(x = name , y = as.numeric(sugars))) +
+  geom_bar( stat = "identity", alpha = .8) +
+  theme_classic() +
+  theme(text = element_text(size=7)) +
+  labs(title = "Sugars by Cereal",
+       x = "Name of Cereal",
+       y = "Sugars per Serving" )
+```
+
+We can also try to flip the coordinates in the plot.
+
+```{r}
+cereal |>
+  filter(name %in% c("Cheerios", "Cinnamon Toast Crunch","Corn Flakes", "Lucky Charms", "Rice Krispies","Froot Loops", "Special K", "Wheat Chex")) |>
+  ggplot(mapping = aes(x = name , y = as.numeric(sugars))) +
+  geom_bar( stat = "identity", alpha = .8) +
+  theme_classic() +
+  theme(text = element_text(size=7)) +
+  labs(title = "Sugars by Cereal",
+       x = "Name of Cereal",
+       y = "Sugars per Serving" ) +
+  coord_flip(xlim = NULL, ylim = NULL, expand = FALSE, clip = "on") 
+```
+
+
+
+
+
+
+
+
+
+
