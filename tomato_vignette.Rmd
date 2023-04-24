@@ -1,0 +1,81 @@
+---
+title: "Tomamto Vignette"
+author: "Suah Kim"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Tomamto Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r message=FALSE}
+library(tidyverse)
+library(dfapply)
+library(dplyr)
+```
+
+
+### Introducing `ggplot2`
+
+`ggplot2` is a R package that enables us to create elegant data visualizations using the grammar of graphics. With this function, we provide the data we are going to be using and apply what kind of aesthetics and mappings we want to see. 
+
+```{r}
+library(ggplot2)
+```
+
+A layer combines data, aesthetic mapping, a geom (geometric object), a stat (statistical transformation), and a position adjustment. Typically, you will create layers using a geom_ function, overriding the default position and stat if needed. I'll be utilizing various layers throughout this vignette to demonstrate different visualizations. 
+
+### Example with a Data Set
+
+This data set explores daily prices of tomatoes between 2014 and 2015, including minimum, maximum, and average prices.
+
+```{r message=FALSE}
+tomato <- read_csv("Tomato.csv")
+
+tomato <- tomato |>
+  filter(Date > "2014-01-01" & Date < "2015-12-31") |>
+  select(-Unit, -Market)
+
+glimpse(tomato)
+```
+
+#### Line Plot with `ggplot2` 
+
+A line plot is useful to show the changes within a certain time frame. This line plot illustrates the average tomato prices throughout the time, along with the minimum prices.
+
+
+The first plot only shows the average along with the the date between 2014 and 2015.
+
+```{r}
+ggplot(data=tomato, aes(x=Date, y=Average)) +
+  geom_line()
+```
+
+We can add more codes to our original data set so we can add minimum prices with color red.
+
+```{r}
+ggplot(tomato, aes(x=Date)) +
+  geom_line(aes(y=Average)) +
+  geom_line(aes(y=Minimum, color="red")) +
+  labs(y = "Average and Minimum")+
+  theme(legend.position = "none")
+```
+
+If we want to see the Average and Minimum prices between a certain range, we can set scale limits. 
+
+```{r}
+ggplot(tomato, aes(x=Date)) +
+  geom_line(aes(y=Average)) +
+  geom_line(aes(y=Minimum, color="red")) +
+  labs(y = "Average and Minimum")+
+  theme(legend.position = "none")+
+  ylim(c(0, 50)) 
+```
