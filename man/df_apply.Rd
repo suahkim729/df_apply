@@ -2,7 +2,7 @@
 % Please edit documentation in R/dfapply.R
 \name{df_apply}
 \alias{df_apply}
-\title{Apply a function that can be applied to a columns of a data frame}
+\title{Apply a function that can be applied to a columns of a data frame (rounding number)}
 \usage{
 df_apply(.data, .fun, .filter)
 }
@@ -17,16 +17,13 @@ df_apply(.data, .fun, .filter)
 data frame that is a modified version of .data
 }
 \description{
-Apply a function that can be applied to a columns of a data frame
+Apply a function that can be applied to a columns of a data frame (rounding number)
 }
 \examples{
 
-TestData <-tibble( double = rnorm(n, 100, 10),
-  x = 123400 / 10^(1L:n),
-  integer = (1L:n) * (1L:n),
-  character = LETTERS[1L:n],
-  factor = factor(letters[1L:n]),
-  logical = rep(c(TRUE, FALSE), length.out = n))
-df_apply <- function(.data, .fun, .filter) {modified_columns <-lapply(.data, function(x) {if (.filter(x)){.fun(x)} else {x}}) return(data.frame(modified_columns))}
-df_apply(TestData, rfun, rfilter)
+TestData <- data.frame(A = c(1.092, 300.81, 399.203, 20.4934),
+B = c(503.47, 29.89, 293.90, 3.01),
+C = c(80.29, 19.867, 39.20, 182.93))
+
+df_apply(TestData, round, is.numeric)
 }

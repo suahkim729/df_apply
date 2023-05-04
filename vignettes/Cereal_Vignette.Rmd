@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, setup}
+```{r, load-packages}
 library(dfapply)
 library(tidyverse)
 library(dplyr)

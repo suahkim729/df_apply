@@ -1,18 +1,25 @@
 Package: dfapply
 Title: Package df_apply
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: c(
     person("Suah", "Kim", email = "snk23@calvin.edu", role = "cre"),
     person("Sherise", "Immanuela", email = "sei4@calvin.edu", role = "aut"),
     person("Sharon", "Velpula", email = "sv44@calvin.edu", role = "fnd"))
 Description: This R package allows us to run a loop function
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Import: 
+License: GPL (>= 3)
+Depends: 
+    R (>= 2.10)
+Imports: 
     tibble
+Suggests: 
+    knitr,
+    rmarkdown,
+    dplyr,
+    ggplot2,
+    readr,
+    tidyverse
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Depends: 
-    R (>= 2.10)
 LazyData: true
+VignetteBuilder: knitr
